@@ -40,5 +40,3 @@ After pulling the SPARK-DOCKER repository, follow the steps below to install the
 - Refer to the official documentation for any issues encountered during installation.
 
 ---
-
-This section provides a clear and concise set of instructions for users to follow after pulling the SPARK-DOCKER repository.
