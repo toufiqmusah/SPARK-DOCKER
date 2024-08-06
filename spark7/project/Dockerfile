@@ -1,11 +1,13 @@
 FROM python:3.9.16-slim
 
-COPY ./requirements.txt /mlcube_project/requirements.txt 
+WORKDIR /mlcube_image
 
-RUN pip3 install --no-cache-dir -r /mlcube_project/requirements.txt
+COPY requirements.txt /mlcube_image/requirements.txt
+
+RUN pip3 install --no-cache-dir -r /mlcube_image/requirements.txt
 
 ENV LANG C.UTF-8
 
-COPY . /mlcube_project
+COPY ../ /mlcube_image/
 
-ENTRYPOINT ["python3", "/mlcube_project/mlcube.py"]
+ENTRYPOINT ["python3", "/mlcube_image/mlcube.py"]
