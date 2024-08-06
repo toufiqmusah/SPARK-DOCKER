@@ -1,2 +1,4 @@
+-e git+https://github.com/MIC-DKFZ/MedNeXt.git#egg=mednextv1
+nnunet==1.7.1
+# Add any other dependencies your project needs below
 typer
-# Include all your requirements here

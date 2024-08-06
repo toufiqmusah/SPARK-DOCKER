@@ -2,6 +2,7 @@
 
 import typer
 
+from main import main
 
 app = typer.Typer()
 
@@ -15,8 +16,8 @@ def infer(
     # e.g. model weights:
     # weights: str = typer.Option(..., "--weights"),
 ):
-    # Modify the infer command as needed
-    raise NotImplementedError("The infer method is not yet implemented")
+    main(input_path=data_path, output_path="Predictions")
+    raise NotImplementedError("The evaluate method is not yet implemented")
 
 
 @app.command("hotfix")
