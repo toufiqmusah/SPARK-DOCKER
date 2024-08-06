@@ -2,7 +2,8 @@ import os
 import re
 import shutil
 
-root_dir = 'C:/Users/OWNER/Desktop/SPARK-DOCKER/'
+root_dir = os.path.dirname(__file__)
+print(root_dir)
 
 def preprocess_data(base_path, destination_path):
     replacements = {'t1c': '0000', 't1n': '0001', 't2f': '0002', 't2w': '0003'}
@@ -48,8 +49,8 @@ def rename_files(destination_path):
     print('Done Formatting to nnU-Net Format')
 
 if __name__ == "__main__":
-    base_path = root_dir + 'BraTS2024-SSA-Challenge-ValidationData/'
-    destination_path = root_dir + 'imagesTs/'
+    base_path = root_dir + '/BraTS2024-SSA-Challenge-ValidationData/'
+    destination_path = root_dir + '/imagesTs/'
 
     os.makedirs(destination_path, exist_ok=True)
     preprocess_data(base_path, destination_path)

@@ -15,11 +15,11 @@ os.environ['RESULTS_FOLDER'] = "SPARK-DOCKER/3d_fullres"
 #import predict
 from preprocess import preprocess_data, rename_files
 
-root_dir = 'SPARK-DOCKER/'
+root_dir = os.path.dirname(__file__)
 
-base_path = root_dir + 'BraTS2024-SSA-Challenge-ValidationData/'
-destination_path = root_dir + 'imagesTs/'
-prediction_path = root_dir + 'MedNext_Predictions/'
+base_path = root_dir + '/BraTS2024-SSA-Challenge-ValidationData/'
+destination_path = root_dir + '/imagesTs/'
+prediction_path = root_dir + '/MedNext_Predictions/'
 
 os.makedirs(destination_path, exist_ok=True)
 preprocess_data(base_path, destination_path)

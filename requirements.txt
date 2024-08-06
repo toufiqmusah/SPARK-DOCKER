@@ -1,0 +1,2 @@
+-e git+https://github.com/MIC-DKFZ/MedNeXt.git@c5ed3f38b56d58c80581c75fea856865f42ddb75#egg=mednextv1
+nnunet==1.7.1

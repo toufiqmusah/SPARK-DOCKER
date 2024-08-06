@@ -11,9 +11,12 @@
 #    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
-
+import os
 import sys
-sys.path.append('SPARK-DOCKER/mednext')
+
+root_dir = os.path.dirname(__file__)
+
+sys.path.append(f'{root_dir}/mednext')
 
 
 import argparse
