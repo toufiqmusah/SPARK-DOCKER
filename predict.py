@@ -19,29 +19,29 @@ from copy import deepcopy
 from multiprocessing import Pool, Process, Queue
 from typing import List, Tuple, Union
 
+root_dir = os.path.dirname(__file__)
+
+print(root_dir)
+sys.path.append(f"{root_dir}/mednext")
+
 import numpy as np
 import SimpleITK as sitk
 import torch
 from batchgenerators.augmentations.utils import resize_segmentation
 from batchgenerators.utilities.file_and_folder_operations import *
-
-from mednext.nnunet_mednext.inference.segmentation_export import (
+from nnunet_mednext.inference.segmentation_export import (
     save_segmentation_nifti,
     save_segmentation_nifti_from_softmax,
 )
-from mednext.nnunet_mednext.postprocessing.connected_components import (
+from nnunet_mednext.postprocessing.connected_components import (
     load_postprocessing,
     load_remove_save,
 )
-from mednext.nnunet_mednext.training.model_restore import (
+from nnunet_mednext.training.model_restore import (
     load_model_and_checkpoint_files,
 )
-from mednext.nnunet_mednext.training.network_training.nnUNetTrainer import nnUNetTrainer
-from mednext.nnunet_mednext.utilities.one_hot_encoding import to_one_hot  # noqa: E402
-
-root_dir = os.path.dirname(__file__)
-
-sys.path.append(f"{root_dir}/mednext")
+from nnunet_mednext.training.network_training.nnUNetTrainer import nnUNetTrainer
+from nnunet_mednext.utilities.one_hot_encoding import to_one_hot
 
 
 def preprocess_save_to_queue(

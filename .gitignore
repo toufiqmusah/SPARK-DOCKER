@@ -1,3 +1,5 @@
 .venv
 
 medperf
+
+__pycache__
