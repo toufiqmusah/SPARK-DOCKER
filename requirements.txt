@@ -1,0 +1,1 @@
+-e git+https://github.com/mlcommons/medperf.git#egg=medperf&subdirectory=cli

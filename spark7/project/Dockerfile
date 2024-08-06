@@ -1,5 +1,7 @@
 FROM python:3.9.16-slim
 
+RUN apt-get update && apt-get install -y git && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 WORKDIR /mlcube_image
 
 COPY requirements.txt /mlcube_image/requirements.txt
